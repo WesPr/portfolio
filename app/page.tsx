@@ -4,13 +4,14 @@ import { allProjects } from "../.contentlayer/generated";
 import { Article } from "./components/article";
 import { Card } from "./components/card";
 import { Navigation } from "./components/nav";
+import Typewriter from "typewriter-effect";
 
 export default function Home() {
   const featured = allProjects.find(
-    (project) => project.slug === "ratelimiter"
+    (project) => project.slug === "compressiontool"
   )!;
-  const top2 = allProjects.find((project) => project.slug === "planetfall")!;
-  const top3 = allProjects.find((project) => project.slug === "highstorm")!;
+  const top2 = allProjects.find((project) => project.slug === "loadbalancer")!;
+  const top3 = allProjects.find((project) => project.slug === "ratelimiter")!;
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(
@@ -36,7 +37,6 @@ export default function Home() {
           <p className="mt-4 text-zinc-400">Software Developer.</p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
-
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           <Card>
             <Link href={`/${featured.slug}`}>
